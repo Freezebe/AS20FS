@@ -11,7 +11,7 @@ Last Update: 2025-12-08
 WARNING: MD5 is considered cryptographically broken and should not be used
 for security-critical applications.
 """
-
+import secrets
 import random
 import hashlib
 
@@ -28,7 +28,7 @@ def generate_random_number_string():
     """
     # Använder random.choice för att välja siffror (hyfasd randomisering)
     # Skapar en någorlunda enhetlig fördelning över alla möjliga 10-siffriga kombinationer
-    return ''.join(random.choice("0123456789") for X in range(PWD_LGT))
+    return ''.join(secrets.choice("0123456789") for X in range(PWD_LGT))
 
 def md5_hash(text):
     """
